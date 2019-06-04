@@ -5,7 +5,7 @@ Un ejemplo simple de cómo usar las clases estándar de Java para crear un bot e
 En <https://twitter.com/rysd19> se muestra un ejemplo de su uso.
 
 ## Uso
-Tras descargarlo, hay que añadir las claves en `Claves.java`.
+Tras descargarlo, hay que añadir las claves en `Twitter.java`.
 
 ## Código adicional
 Aunque no se usa en la clase `Twitter` incluye los métodos necesarios para enviar mensajes directos.
