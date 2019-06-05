@@ -21,5 +21,5 @@ Una vez creada la aplicación, el único paso es generar y crear las claves. Nec
 
 Esas claves debe añadirlas en el fichero `Twitter.java` con la siguiente equivalencia:
 
-(claves.png)
+![alt test](claves.png "Claves")
   
