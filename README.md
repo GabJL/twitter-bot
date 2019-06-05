@@ -21,6 +21,8 @@ De forma rápida tenemos las siguientes clases:
 
 ### Funcionamiento del bot
 
+El bot parte de una matriz de NxN (N es configurable en la clase). Cada una de las casillas está ocupada por un jugador. En cada movimiento se elije al azar un conquistador y se examinan que posiciones de su alrededor son conquistables, es decir, está en posesión de otro jugador y existe (las prácticas de matrices de Programación sirven para algo :P). Entre las posiciones conquistables se elige una al azar. Esa información se devuelve para el que programa principal puede mostrar la información. 
+
 ### Funcionamiento del uso del API de Twitter
 
 [En este enlace](doc/usingAPI.md) podéis una información inicial sobre cómo se usa el API de twitter a nivel de usuario.
