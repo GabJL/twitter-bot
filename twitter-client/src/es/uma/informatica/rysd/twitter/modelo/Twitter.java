@@ -290,7 +290,7 @@ public class Twitter {
 		String twitter_endpoint = "https://api.twitter.com/1.1/statuses/update.json";
 
 		SortedMap<String, String> parameters = new TreeMap<String, String>();
-		parameters.put("status",msg)
+		parameters.put("status",msg);
 
 		String urlStr = twitter_endpoint+"?status="+encode(msg);
 		if(media_id != null){
