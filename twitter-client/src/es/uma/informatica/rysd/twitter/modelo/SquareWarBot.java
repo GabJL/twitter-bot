@@ -13,15 +13,19 @@ import java.util.Random;
 import javax.imageio.ImageIO;
 
 public class SquareWarBot {
-	final static private int size = 3;
-	final static private int sq = 50;
-	private int [][] square;
-	private int [] possessions;
+	final static private int size = 3; // La cantidad de cuadrados será size x size
+	final static private int sq = 50; // Tamaño de cada cuadrado en la imagen
+	private int [][] square; // Matriz que indica a quién pertenece cada posicion
+	private int [] possessions; // Número de posesiones que tiene cada jugador
 	
 	public SquareWarBot(){
+		// Creamos las matrices y arrays
 		square = new int[size][size];
 		possessions = new int[size*size];
 		
+		// Lo inicializamos:
+		// - Cada jugador tiene una posición
+		// - La posición se asigna por orden
 		for(int i = 0; i < size; i++){
 			for(int j = 0; j < size; j++){
 				square[i][j] = i*size + j + 1;
@@ -30,6 +34,7 @@ public class SquareWarBot {
 		}
 	}
 	
+	// Indica cuantos jugadores siguen activos
 	public int getActiveSquares(){
 		int count = 0;
 		for(int i: possessions){
@@ -38,10 +43,13 @@ public class SquareWarBot {
 		return count;
 	}
 	
+	// Indica la cantidad de posesiones de un jugador
 	public int getPossessions(int s){
 		return possessions[s-1];
 	}
 
+	// Dibuja un mapa y lo guarda en el fichero indicado.
+	// En mov[2] y mov[3] viene las coordenadas del conquistador y en las 4 y 5 las del vencido.
 	public void printMap(String filename, int [] mov){
 	    try {
 	        int width = size*sq, height = size*sq;
@@ -53,6 +61,8 @@ public class SquareWarBot {
 	        ig2.setFont(font);
 	        for(int i = 0; i < size; i++){
 	        	for(int j = 0; j < size; j++){
+	        		// Dibujamos el cuadrado actual y el número del jugador que lo posee
+	        		// El color del jugador se decide atendiendo a su número
 	    	        String message = Integer.toString(square[i][j]);
 	    	        int x = (square[i][j]-1)/size;
 	    	        int y = (square[i][j]-1)%size;
@@ -77,15 +87,24 @@ public class SquareWarBot {
 	      }		
 	}
 	
+	// Genera un nuevo combate. En el array devuelto se almancena:
+	// - Posición 0: conquistador
+	// - Posición 1: conquistado
+	// - Posición 2 y 3: Coordenadas del conquistador
+	// - Posición 4 y 5: Coordenadas del conquistado
 	public int [] getMovement(){
 		int [] values = new int [6];
 		boolean correct = false;
 		Random r = new Random();
 		
 		while(!correct){
+			// Elige un conquistador al azar
 			int x = r.nextInt(size);
 			int y = r.nextInt(size);
 			
+			// Calcula cuales son los posibles conquistables:
+			// - Están en su inmediaciones (incluyendo diagonal)
+			// - No los posee ya el conquistador
 			ArrayList<Integer> candidate = new ArrayList<Integer>();
 			for(int i = -1; i <= 1; i++){
 				int x1 = x+i;
@@ -100,8 +119,11 @@ public class SquareWarBot {
 					}
 				}
 			}
+			// Si hay posibles conquitables (es posible que no haya candidatos (ya tiene todos los de su alrededor) 
+			// y se repite el bucle completo
 			if(candidate.size() > 0){
 				correct = true;
+				// Se conquista uno al azar
 				int p = r.nextInt(candidate.size());
 				values[0] = square[x][y];
 				possessions[square[x][y]-1]++;
