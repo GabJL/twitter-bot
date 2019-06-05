@@ -147,12 +147,15 @@ public class Twitter {
 
 	public String getUserID(String user) throws Exception
 	{
+		// Valores necesario para generar la firma
 		String method = "GET";
 		String twitter_endpoint = "https://api.twitter.com/1.1/users/show.json";
 
 		SortedMap<String, String> parameters = new TreeMap<String, String>();
-		parameters.put("screen_name",user);
+		parameters.put("screen_name",user); // Parámetros
 
+
+		// Petición
 		String urlStr = twitter_endpoint+"?screen_name="+encode(user);
 		URL request = new URL(urlStr);
 
@@ -173,11 +176,13 @@ public class Twitter {
 
 	public void sendDM(String user, String msg)
 	{
+		// Valores necesario para generar la firma
 		String method = "POST";
 		String twitter_endpoint = "https://api.twitter.com/1.1/direct_messages/events/new.json";
 
+		SortedMap<String, String> parameters = new TreeMap<String, String>(); // No hay parámetros pero hay que pasarlo aunque esté vacío
 
-		SortedMap<String, String> parameters = new TreeMap<String, String>();
+		// Petición
 		String urlStr = twitter_endpoint;
 		URL request = null;
 		HttpsURLConnection connection;
@@ -188,6 +193,7 @@ public class Twitter {
 	        connection.setRequestMethod("POST");
 	        connection.setRequestProperty("Content-type", "application/json");
 
+	        // En esta petición van datos en concreto un objeto json con los valores del mensaje directo
 	        connection.setDoOutput(true);
 	        String json = "{\"event\": {\"type\": \"message_create\", \"message_create\": {\"target\": {\"recipient_id\": \""
 	        		+ user +"\"}, \"message_data\": {\"text\": \""+ msg + "\"}}}}";
@@ -210,10 +216,12 @@ public class Twitter {
 
 	public String UploadFile(String filename)
 	{
+		// Valores necesario para generar la firma
 		String method = "POST";
 		String twitter_endpoint = "https://upload.twitter.com/1.1/media/upload.json";
 		SortedMap<String, String> parameters = new TreeMap<String, String>();
 
+		// Petición
 		String urlStr = twitter_endpoint;
 		URL request = null;
 		HttpsURLConnection connection;
@@ -225,6 +233,7 @@ public class Twitter {
 	        connection.setRequestMethod("POST");
 	        String boundary =  "*****";
 	        connection.setRequestProperty("Content-type", "multipart/form-data; boundary=" + boundary);
+	        // En este caso también datos en un formato multiparte 
 	        connection.setDoOutput(true);
 	        OutputStream out = connection.getOutputStream();
 
@@ -276,17 +285,20 @@ public class Twitter {
 
 	public void sendTweet(String msg, String media_id)
 	{
+		// Valores necesario para generar la firma
 		String method = "POST";
 		String twitter_endpoint = "https://api.twitter.com/1.1/statuses/update.json";
 
-
 		SortedMap<String, String> parameters = new TreeMap<String, String>();
-		parameters.put("status",msg);
+		parameters.put("status",msg)
+
 		String urlStr = twitter_endpoint+"?status="+encode(msg);
 		if(media_id != null){
 			parameters.put("media_ids", media_id);
 			urlStr += "&media_ids="+media_id;
 		}
+
+		// Petición
 		URL request = null;
 		HttpsURLConnection connection;
 		try {
