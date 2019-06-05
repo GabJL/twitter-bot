@@ -6,7 +6,7 @@ En <https://twitter.com/rysd19> se muestra un ejemplo de su uso.
 
 ## Uso
 Tras descargarlo, hay que añadir las claves en `Twitter.java`.
-[En este enlace](usigAPI.md) podéis una información inicial sobre cómo se usa el API de twitter a nivel de usuario.
+[En este enlace](usingAPI.md) podéis una información inicial sobre cómo se usa el API de twitter a nivel de usuario.
 
 ## Código adicional
 Aunque no se usa en la clase `Twitter` incluye los métodos necesarios para enviar mensajes directos.
