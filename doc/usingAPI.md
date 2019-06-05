@@ -2,7 +2,7 @@
 
 En este documento se explica de forma más o menos rápida como usar el API a nivel de usuario y cómo enviar tuits.
 
-Todos los código mencionados en este documento pueden verser en el fichero `Twitter.java`.
+Todos los código mencionados en este documento pueden verse en el fichero `Twitter.java`.
 
 ## Autenticación en twitter
 
@@ -46,5 +46,25 @@ Generados esos valores llamamos al método `buildAuthorization` y su resultado l
 Por lo demás las peticiones se hacen igual que las peticiones realizadas en la práctica.
 
 ## Enviar un tuit con imágenes
+
+Para subir un tuit con imágenes debe hacer el siguiente proceso:
+
+1. Subir las imágenes a Twitter (obteniendo como resultado su id)
+2. Enviar un tuit con el texto oportuno y añadiendo como parámeto adicional las ids de las imágenes (hasta 4).
+
+La principal dificultad para subir una imagen es que debe añadirse a una petición POST como documento multiparte (esto es igual que usa por ejemplo SMTP para adjuntar a la vez texto en varios formatos, imágenes y otros adjuntos, véase <https://es.wikipedia.org/wiki/MIME>). El proceso se puede encontrar en el método `UploadFile`.
+
+Una vez subida la imagen y con su id, enviar el tuit es sencillo haciendo una petición POST al *endpoint* correspondiente. Como curiosidad de este *endpoint* es que pese a usar el método POST los parámetros se adjuntan a la URL como parámetros (msg y media_ids). Eso implica que haya que considerarlos para generar la firma de la petición (véase el método `sendTweet`).
+
+## Enviar un Mensaje Directo
+
+Aunque esto no lo usa el bot, lo he añadido como elemento adicional para que se vea otras variantes del uso del API de Twitter. En este caso el proceso es:
+
+1. Obtener el id del usuario destino (para enviarle debe tener permiso para ello)
+2. Enviar el mensaje directo usando el id.
+
+Para obtener el id del usuario hay que obtener la información completa del usuario. Esta consulta es muy similar a las realizadas en las prácticas. Incluso se puede hacer con la autenticación de aplicación, pero en este caso se hace usando la de usuario. Su código está en el método `getUserID`.
+
+Con el id obtenido de la petición previa ya se puede enviar el MD (método `sendDM`). Como crea contenido, usa el método POST y como peculiaridad es que envía la información para crear el MD usando un objeto JSON.
 
 
