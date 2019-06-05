@@ -30,3 +30,11 @@ El bot parte de una matriz de NxN (N es configurable en la clase). Cada una de l
 ### Código adicional
 
 Aunque no se usa en la clase `Twitter` incluye los métodos necesarios para enviar mensajes directos. Es posible que para enviar MD necesite ajustar los permisos de la aplicación. Más información [aquí](doc/usingAPI.md)
+
+## Disclaimer
+
+Java (y la mayoría de los lenguajes) tiene bibliotecas externas que facilita la consulta del API de Twitter, pero el interés de este ejemplo es ver cómo usarla a bajo nivel.
+
+También se pueden hacer muchas mejoras, pero la idea era hacer algo rápido y sencillo. Casi he tardado más en escribir estas explicaciones que programarlo (implementarlo solo ha requerido pocas horas, todo depende del conocimiento de JAVA, el API de Twitter y cómo de eficiente y rápido se sea buscando en stackoverflow :P).
+
+Es posible que el código tenga errores, si los detectáis avisadme o haced un pull request.
