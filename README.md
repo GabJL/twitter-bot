@@ -21,7 +21,7 @@ De forma rápida tenemos las siguientes clases:
 * * `modelo19.SquareWarBot`: Clase que maneja el bot
 * 2020: StudentWarBot
 * * `modelo20.Main`: Clase principal que se encarga de conectar el resto
-* * `modelo20.StudenteWarBot`: Clase que maneja el bot
+* * `modelo20.StudentWarBot`: Clase que maneja el bot
 
 ### Funcionamiento del bot (SquareWarBot)
 
