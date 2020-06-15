@@ -1,5 +1,5 @@
-# SquareWarBot
-Un ejemplo simple de cómo usar las clases estándar de Java para crear un bot en twitter usando el API REST de esta red social.
+# WarBots
+Unos ejemplos simples de cómo usar las clases estándar de Java para crear un bot en twitter usando el API REST de esta red social.
 
 ## Cuenta de ejemplo
 En <https://twitter.com/rysd20> se muestra un ejemplo de su uso.
