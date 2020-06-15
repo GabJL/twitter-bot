@@ -2,7 +2,7 @@
 Un ejemplo simple de cómo usar las clases estándar de Java para crear un bot en twitter usando el API REST de esta red social.
 
 ## Cuenta de ejemplo
-En <https://twitter.com/rysd19> se muestra un ejemplo de su uso.
+En <https://twitter.com/rysd20> se muestra un ejemplo de su uso.
 
 ## Uso
 
@@ -15,13 +15,21 @@ En <https://twitter.com/rysd19> se muestra un ejemplo de su uso.
 De forma rápida tenemos las siguientes clases:
 
 * `entidades.*`: Son clases usadas para analizar las respuestas obtenidas tras las peticiones a los diferentes *endpoints* de Twitter.
-* `modelo.Main`: Clase principal que se encarga de conectar el resto
-* `modelo.SquareWarBot`: Clase que maneja el bot
-* `modelo.Twitter`: Clase que se comunica con Twitter
+* `client.Twitter`: Clase que se comunica con Twitter
+* 2019: SquareWarBot
+* * `modelo19.Main`: Clase principal que se encarga de conectar el resto
+* * `modelo19.SquareWarBot`: Clase que maneja el bot
+* 2020: StudentWarBot
+* * `modelo20.Main`: Clase principal que se encarga de conectar el resto
+* * `modelo20.StudenteWarBot`: Clase que maneja el bot
 
-### Funcionamiento del bot
+### Funcionamiento del bot (SquareWarBot)
 
 El bot parte de una matriz de NxN (N es configurable en la clase). Cada una de las casillas está ocupada por un jugador. En cada movimiento se elije al azar un conquistador y se examinan que posiciones de su alrededor son conquistables, es decir, está en posesión de otro jugador y existe (las prácticas de matrices de Programación sirven para algo :P). Entre las posiciones conquistables se elige una al azar. Esa información se devuelve para el que programa principal puede mostrar la información. 
+
+### Funcionamiento del bot (StudentWarBot)
+
+En desarrollo (aún solo es la idea :P)
 
 ### Funcionamiento del uso del API de Twitter
 
