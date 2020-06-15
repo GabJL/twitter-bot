@@ -1,4 +1,4 @@
-package es.uma.informatica.rysd.twitter.modelo;
+package es.uma.informatica.rysd.twitter.client;
 
 import java.io.File;
 import java.io.FileInputStream;

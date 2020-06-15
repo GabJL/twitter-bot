@@ -1,5 +1,6 @@
-package es.uma.informatica.rysd.twitter.modelo;
+package es.uma.informatica.rysd.twitter.modelo2019;
 
+import es.uma.informatica.rysd.twitter.client.Twitter;
 
 public class Main {
 	public static void main(String[] args) throws Exception {
