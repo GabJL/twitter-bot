@@ -2,7 +2,7 @@
 Unos ejemplos simples de cómo usar las clases estándar de Java para crear un bot en twitter usando el API REST de esta red social.
 
 ## Cuenta de ejemplo
-En <https://twitter.com/rysd20> se muestra un ejemplo de su uso.
+En <https://twitter.com/rysd20> se muestra un ejemplo de su uso del SquareWarBot y en <https://twitter.com/RysdSw> para el de StudentWarBot.
 
 ## Uso
 
@@ -29,7 +29,7 @@ El bot parte de una matriz de NxN (N es configurable en la clase). Cada una de l
 
 ### Funcionamiento del bot (StudentWarBot)
 
-En desarrollo (aún solo es la idea :P)
+En este caso es bastante más sencillo. Se tiene una lista de estudiantes y en cada paso se genera un par (ganador, perdedor) al azar, eliminando el perdedor hasta que quede 1. Quizás la parte más compleja (como en el otro) es generar la imagen. En este caso he generado una tabla HTML sencilla y luego la he convertido a imagen.
 
 ### Funcionamiento del uso del API de Twitter
 
