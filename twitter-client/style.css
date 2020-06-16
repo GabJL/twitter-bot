@@ -1,0 +1,40 @@
+<style>
+#tabla {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  text-align: left;
+}
+
+#tabla td, th {
+  padding: 8px;
+  width: 20%;
+}
+
+#loser {
+  border: 2px solid red;
+  background-color: #fbbeb1;
+  color: red;
+}
+
+#dead {
+  background-color: #fbbeb1;
+  color: red;
+  text-decoration:line-through;
+}
+
+#alive {
+}
+
+#winner {
+  background-color: #b2feb7;
+  color: green;
+  border: 2px solid green;
+}
+
+#dead {
+  background-color: fbbeb1;
+  text-decoration:line-through;
+  color: red;
+}
+</style>
