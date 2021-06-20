@@ -19,7 +19,7 @@ De forma rápida tenemos las siguientes clases:
 * 2019: SquareWarBot
 * * `modelo19.Main`: Clase principal que se encarga de conectar el resto
 * * `modelo19.SquareWarBot`: Clase que maneja el bot
-* 2020: StudentWarBot
+* 2020 y 2021: StudentWarBot
 * * `modelo20.Main`: Clase principal que se encarga de conectar el resto
 * * `modelo20.StudentWarBot`: Clase que maneja el bot
 
